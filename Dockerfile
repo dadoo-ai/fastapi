@@ -2,14 +2,14 @@
 FROM python:alpine3.19
 
 # Set the working directory in the container
-WORKDIR /.
+WORKDIR /app
 
 # Install Python and pip
 # RUN apt update && \
 #     apt install -y python3-pip
 
 # Copy the current directory contents into the container at /app
-COPY . .
+COPY . /app
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir --upgrade -r requirements.txt

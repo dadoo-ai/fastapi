@@ -1,9 +1,12 @@
 from fastapi import APIRouter
 
-from app.client.api.endpoint import test
+from app.client.api.endpoint import mongo, home
 
 
 routeur = APIRouter()
 routeur.include_router(
-    test.router, prefix="/test", tags=["test"]
+    mongo.router, prefix="/test", tags=["test"]
+)
+routeur.include_router(
+    home.router
 )
